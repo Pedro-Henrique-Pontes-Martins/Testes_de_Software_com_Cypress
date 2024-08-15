@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+![React: Testes end to end com Cypress](thumb.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bytebank
 
-## Available Scripts
+O Bytebank é um MVP de banco digital que está no início de suas atividades mas ainda falta muito que ser desenvolvido. 
 
-In the project directory, you can run:
+# JSONServer + JWT Auth
 
-### `npm start`
+Essa é ma API Rest mockada, utilizando json-server e JWT.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Instalação
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+$ npm install
+$ npm run start-api
+```
 
-### `npm test`
+## 🛠️ Como se registrar?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Você pode fazer isso efetuando uma requisição post para:
 
-### `npm run build`
+```
+POST http://localhost:8000/public/cadastrar
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Com os seguintes dados:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+{
+    "nome": "neilton seguins",
+    "email": "neilton@alura.com.br",
+    "senha": "123456",
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Repare que o e-mail é um campo único e usuários com e-mails duplicados não serão persistidos.
 
-### `npm run eject`
+## 🛠️ Como fazer login?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Você pode fazer isso efetuando uma requisição post para:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+POST http://localhost:8000/public/login
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Com os seguintes dados:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+{
+  "email": "neilton@alura.com.br",
+  "senha":"123456"
+}
+```
 
-## Learn More
+Você vai receber um token no seguinte formato:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+{
+   "access_token": "<ACCESS_TOKEN>",
+   "user": { ... dados do usuário ... }
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autenticar próximas requests?
 
-### Code Splitting
+E então, adicionar este mesmo token ao header das próximas requisições:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+Authorization: Bearer <ACCESS_TOKEN>
+```
 
-### Analyzing the Bundle Size
+## 📚 Mais informações do curso
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O Bytebank é um projeto utilizado durante toda a formação de React: Testando seu Front-end, e essa API será utilizada em alguns cursos :)

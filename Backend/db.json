@@ -16,13 +16,27 @@
     },
     {
       "transacao": "Depósito",
-      "valor": "102",
-      "data": "22/11/2022",
-      "mes": "Novembro",
+      "valor": "500",
+      "data": "05/01/2023",
+      "mes": "Janeiro",
       "id": 3
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "1500",
+      "data": "05/01/2023",
+      "mes": "Janeiro",
+      "id": 4
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "250",
+      "data": "05/01/2023",
+      "mes": "Janeiro",
+      "id": 5
     }
   ],
   "saldo": {
-    "valor": 2000
+    "valor": 3750
   }
 }
