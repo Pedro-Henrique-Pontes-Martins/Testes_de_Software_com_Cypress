@@ -75,4 +75,23 @@ describe('Página Principal', () => {
     cy.verifyByData('paragrafo3', 'Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!')
     cy.verifyByData('paragrafo4', 'Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.')
   })
+
+  it('Deve renderizar todas as imagens!', () => {
+    cy.verifyBeVisible('image1')
+    cy.verifyBeVisible('image2')
+    cy.verifyBeVisible('image3')
+    cy.verifyBeVisible('image4')
+    cy.verifyBeVisible('image5')
+  })
+
+  it('Deve renderizar todos os elementos div!', () => {
+    cy.verifyBeVisible('container')
+    cy.verifyBeVisible('conteudo')
+    cy.verifyBeVisible('banner')
+    cy.verifyBeVisible('vantagens_itens')
+    cy.verifyBeVisible('vantagens_itens2')
+    cy.verifyBeVisible('vantagens_itens3')
+    cy.verifyBeVisible('vantagens_itens4')
+    cy.verifyBeVisible('vantagens_itens5')
+  })
 })
