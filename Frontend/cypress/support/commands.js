@@ -24,6 +24,14 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+/*Cria o comando getByData, que permite acessar um elemento pelo seu seletor sem colocar o termo 'data-test'*/
+
+/*atividade 05*/
 Cypress.Commands.add('getByData', (seletor) => {
     return cy.get(`[data-test=${seletor}]`)
+})
+
+/*atividade 06*/
+Cypress.Commands.add('verifyByData', (seletor, text) => {
+    return cy.get(`[data-test=${seletor}]`).contains(text)
 })
