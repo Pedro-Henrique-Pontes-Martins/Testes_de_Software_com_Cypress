@@ -42,4 +42,32 @@ describe('Página Principal', () => {
   it('Deve renderizar p com o texto correto!', () => {
     cy.getByData('paragrafo4').contains('Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.')
   })
+
+  it('Deve renderizar a imagem', () => {
+    cy.getByData('image1').should('be.visible')
+  })
+  it('Deve renderizar a imagem', () => {
+    cy.getByData('image2').should('be.visible')
+  })
+  it('Deve renderizar a imagem', () => {
+    cy.getByData('image3').should('be.visible')
+  })
+  it('Deve renderizar a imagem', () => {
+    cy.getByData('image4').should('be.visible')
+  })
+  it('Deve renderizar a imagem', () => {
+    cy.getByData('image5').should('be.visible')
+  })
+
+  it('Deve renderizar os elementos div', () => {
+    cy.getByData('container').should('be.visible')
+    cy.getByData('vantagens_itens').should('be.visible')
+    cy.getByData('vantagens_itens2').should('be.visible')
+    cy.getByData('vantagens_itens3').should('be.visible')
+    cy.getByData('vantagens_itens4').should('be.visible')
+    cy.getByData('vantagens_itens5').should('be.visible')
+    cy.getByData('container-vantagens').should('be.visible')
+    cy.getByData('container').should('be.visible')
+  })
+
 })
