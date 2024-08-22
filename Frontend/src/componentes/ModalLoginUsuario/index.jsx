@@ -113,7 +113,7 @@ export default function ModalLoginUsuario({
                 onChange={(event) => setSenha(event.target.value)}
               />
               {erro.path === 'senha' ? (
-                <span data-test="mensagem-erro">{erro.message}</span>
+                <span data-test="mensagem-erro2">{erro.message}</span>
               ) : (
                 ''
               )}
