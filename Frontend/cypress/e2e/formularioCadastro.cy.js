@@ -6,7 +6,10 @@ describe('Formulário cadastro', () => {
   it('Usuário deve conseguir se cadastrar com sucesso', () => {
   cy.getByData('botao-cadastro').click() /* testaremos agora o botão 'cadastrar' */
   cy.getByData('nome-input').type('Jose da Silva')
-  cy.getByData('email-input').type('ze4@email.com')
+  cy.getByData('email-input').type('ze5@email.com')
+  /*O email deve ser trocado toda vez que um usuário é cadastrado*/
+
+
   cy.getByData('senha-input').type('456789')
   cy.getByData('botao-enviar').click()
   cy.getByData('mensagem-sucesso').should('exist').and('have.text', 'Usuário cadastrado com sucesso!')
