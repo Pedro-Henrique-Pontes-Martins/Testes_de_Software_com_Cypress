@@ -11,7 +11,7 @@ const listaMenu = [
 
 export default function Menu({ path }) {
   return (
-    <nav className={estilos.menu}>
+    <nav className={estilos.menu} data-test="menu">
       {listaMenu.map((item, indice) => {
         return (
           <div key={item.href} className={estilos.item}>
